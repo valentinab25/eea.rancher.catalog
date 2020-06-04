@@ -13,6 +13,6 @@
  # ${GIT_NAME} - if given, is the git repository name
 
 sed -i "s/RAZZLE_FRONTEND_VERSION:.*/RAZZLE_FRONTEND_VERSION: '${DOCKER_IMAGENAME_ESC}:${DOCKER_IMAGEVERSION}'/" ${nextdir}/docker-compose.yml
-sed -i "s/RAZZLE_FRONTEND_VERSION_URL:.*/RAZZLE_FRONTEND_VERSION_URL: 'https://github.com/${GIT_ORG}/${GIT_NAME}/releases/tag/${DOCKER_IMAGEVERSION}'/" ${nextdir}/docker-compose.yml
+sed -i "s/RAZZLE_FRONTEND_VERSION_URL:.*/RAZZLE_FRONTEND_VERSION_URL: 'https:\/\/github.com\/${GIT_ORG}\/${GIT_NAME}\/releases\/tag\/${DOCKER_IMAGEVERSION}'/" ${nextdir}/docker-compose.yml
 sed -i "s/RAZZLE_FRONTEND_PUBLISHED_AT:.*/RAZZLE_FRONTEND_PUBLISHED_AT: '$(date +%F'T'%T'Z')'/" ${nextdir}/docker-compose.yml
 
