@@ -1,7 +1,7 @@
 version: "2"
 services:
   redmine:
-    image: eeacms/redmine:200
+    image: eeacms2/redmine:201
     labels:
       io.rancher.scheduler.affinity:host_label: ${REDMINE_SERVER_LABEL}
       eu.europa.eionet.taskman: "yes"
@@ -74,7 +74,7 @@ services:
     - "--join-buffer-size=256M"
 
   mysql-backup:
-    image: eeacms/mysql-backup:0.9.0
+    image: eeacms2/mysql-backup:0.9.0
     labels:
       eu.europa.eionet.taskman: "yes"
       io.rancher.container.hostname_override: container_name
@@ -110,7 +110,7 @@ services:
     {{- end}}
   {{- else}}
   postfix:
-    image: eeacms/postfix:2.10-3.6
+    image: eeacms2/postfix:2.10-3.6
     labels:
       eu.europa.eionet.taskman: "yes"
       io.rancher.scheduler.affinity:host_label: ${REDMINE_SERVER_LABEL}
@@ -141,7 +141,7 @@ services:
     - "2048"
 
   apache:
-    image: eeacms/apache-taskman:2.4-2.6
+    image: eeacms2/apache-taskman:2.4-2.6
     labels:
       io.rancher.scheduler.affinity:host_label: ${REDMINE_FRONT_LABEL}
       eu.europa.eionet.taskman: "yes"
@@ -162,7 +162,7 @@ services:
       TZ: "Europe/Copenhagen"
 
   drawio:
-    image: eeacms/redmine-drawio-alpine:12.2-1.0
+    image: eeacms2/redmine-drawio-alpine:12.2-1.0
     labels:
       io.rancher.scheduler.affinity:host_label: ${REDMINE_FRONT_LABEL}
       eu.europa.eionet.taskman: "yes"
